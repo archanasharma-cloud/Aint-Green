@@ -107,7 +107,7 @@ if (contactForm){
       formNote.textContent = 'Please enter your name to continue.';
       return;
     }
-    formNote.textContent = `Thanks, ${name.split(' ')[0]} — your message is ready to send. Connect a form backend or mail service to deliver it to info@aintgreen.com.`;
+    formNote.textContent = `Thanks, ${name.split(' ')[0]} — your message is ready to send. Connect a form backend or mail service to deliver it to sundara.vadhanan@aintgreen.com.`;
     contactForm.reset();
   });
 }
