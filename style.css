@@ -247,31 +247,22 @@ button{ font-family:inherit; cursor:pointer; }
 }
 
 /* ---------- Services ---------- */
-.service-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.service-card{
-  background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
-  padding:32px; transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s;
-  position:relative; overflow:hidden;
+.lifecycle-strip{
+  border:1px solid var(--line); border-radius:20px; padding:32px; text-align:center;
 }
-.service-card::before{
-  content:''; position:absolute; left:0; top:0; height:3px; width:0%;
-  background:linear-gradient(90deg,var(--green),var(--green-bright));
-  transition:width .4s var(--ease);
+.lifecycle-title{
+  font-family:var(--font-mono); font-size:12.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--green-deep); font-weight:600; margin-bottom:26px;
 }
-.service-card:hover{ transform:translateY(-6px); box-shadow:0 24px 48px -24px rgba(10,19,13,.2); border-color:transparent; }
-.service-card:hover::before{ width:100%; }
-.service-icon{
-  width:52px; height:52px; border-radius:14px; background:var(--ink); color:var(--green-bright);
-  display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+.lifecycle-steps{ display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
+.lifecycle-step{ display:flex; flex-direction:column; align-items:center; gap:10px; width:110px; }
+.lifecycle-icon{
+  width:52px; height:52px; border-radius:50%; background:var(--green-mist); color:var(--green-deep);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
 }
-.service-icon svg{ width:26px; height:26px; }
-.service-card h3{ font-size:19px; margin-bottom:10px; }
-.service-card > p{ font-size:14.5px; line-height:1.6; color:var(--slate); margin-bottom:18px; }
-.service-list{ display:flex; flex-wrap:wrap; gap:8px; }
-.service-list li{
-  font-size:12.5px; font-family:var(--font-mono); color:var(--green-deep);
-  background:var(--green-mist); padding:6px 11px; border-radius:6px;
-}
+.lifecycle-icon svg{ width:26px; height:26px; }
+.lifecycle-step span:last-child{ font-size:12.5px; font-weight:600; color:var(--ink); line-height:1.35; }
+.lc-arrow{ width:20px; height:20px; color:var(--slate-soft); flex-shrink:0; }
 
 /* ---------- Industries ---------- */
 .industry-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
