@@ -67,16 +67,22 @@ function animateCounter(el){
   }
   requestAnimationFrame(tick);
 }
-if ('IntersectionObserver' in window){
-  const counterIO = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting){
-        animateCounter(entry.target);
-        counterIO.unobserve(entry.target);
-      }
-    });
-  }, { threshold:0.6 });
-  counters.forEach(el => counterIO.observe(el));
+.lifecycle-strip{
+  border:1px solid var(--line); border-radius:20px; padding:32px; text-align:center;
+}
+.lifecycle-title{
+  font-family:var(--font-mono); font-size:12.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--green-deep); font-weight:600; margin-bottom:26px;
+}
+.lifecycle-steps{ display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; }
+.lifecycle-step{ display:flex; flex-direction:column; align-items:center; gap:10px; width:110px; }
+.lifecycle-icon{
+  width:52px; height:52px; border-radius:50%; background:var(--green-mist); color:var(--green-deep);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.lifecycle-icon svg{ width:26px; height:26px; }
+.lifecycle-step span:last-child{ font-size:12.5px; font-weight:600; color:var(--ink); line-height:1.35; }
+.lc-arrow{ width:20px; height:20px; color:var(--slate-soft); flex-shrink:0; }
 }
 
 /* ---------- Contact form (front-end only) ---------- */
